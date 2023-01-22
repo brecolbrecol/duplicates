@@ -36,7 +36,7 @@ def more_than_one_link(filename):
 
 
 def rm_and_create_hardlink(file_src, file_dst):
-    os.remove(file_dst)
+    os.remove(file_dst) # ToDo: check if os.link has chances to work before removing (maybe hard linking to tmp file and only if success then rm and mv)
     os.link(file_src, file_dst)
 
 
