@@ -61,7 +61,6 @@ def find_duplicates(directory1, directory2, md5s):
     for md5 in md5s[directory1]:
         if md5 in md5s[directory2]:
             duplicates[md5] = (md5s[directory1][md5], md5s[directory2][md5])
-            # print(md5, ";", md5s[directory1][md5], ";", md5s[directory2][md5])
             count += 1
             print("Duplicates found:\t", str(count), end="\r")
     print("Duplicates found:\t", str(count))
@@ -74,7 +73,7 @@ def print_directories_used_space(directories):
     for directory in directories:
         du = subprocess.Popen(["du", "-sh", directory], stdout=subprocess.PIPE)
         used_space = subprocess.check_output(['du', '-sh', directory]).split()[0].decode('utf-8')
-        print("\t - " + directory + "  " + str(used_space))
+        print("\t - " + str(used_space) + "\t- " + directory)
 
 
 def main(directories):
