@@ -6,10 +6,15 @@ creates hard links for duplicated files between two directories.
 ## ToDo
 Initial approach is wrong: directories are uninmportant, they are only needed to delimit the set of files.
 
+## Check first
+
+- **Filesystem must support hardlinks**
+- **All files must share same filesystem**
+
 ### Data structure
 ```
-files = { md5: { inode: (path1, path2, ..., pathN)  } }
+files = { md5: { inode: (path1, path2, ..., pathN), filesystem: filesystem_id } }
 ```
 
 ### Goal
-One inode per md5, no matter how many paths are associated to them.
+One inode per md5 and filesystem, no matter how many paths are associated to them.
