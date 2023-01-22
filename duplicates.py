@@ -12,6 +12,8 @@ def md5_dir(directory):
 
     count = 0
     for filename in filenames:
+        if not os.path.isfile(filename):
+            continue
         with open(filename, 'rb') as inputfile:
             count += 1
             data = inputfile.read()
