@@ -13,7 +13,7 @@ Initial approach is wrong: directories are uninmportant, they are only needed to
 
 ### Data structure
 ```
-files = { md5: { inode: (path1, path2, ..., pathN), filesystem: filesystem_id } }
+files = { md5: { filesystem_id : { inode: (path1, path2, ..., pathN) } } }
 ```
 
 ### Goal
