@@ -4,7 +4,7 @@ creates hard links for duplicated files between two directories.
 **Important:** for creating the hard link the destination file must be previously deleted, be aware of that.
 
 
-### Goal
+## Goal
 One inode per md5 and filesystem, no matter how many paths are associated to them.
 
 ## Check first
@@ -12,7 +12,7 @@ One inode per md5 and filesystem, no matter how many paths are associated to the
 - **Filesystem must support hardlinks**
 - **All files must share same filesystem**
 
-### Data structure
+## Data structure
 ```
 files = { md5: { filesystem_id : { inode: (path1, path2, ..., pathN) } } }
 ```
